@@ -208,6 +208,10 @@ img, video {
    WAITLIST
 ========================= */
 
+.form-section{
+  padding:100px 0;
+}
+
 .waitlist-box{
   background:linear-gradient(135deg, #232f4b, #2952bd);
   padding:60px;
@@ -235,10 +239,12 @@ img, video {
   border-radius:14px;
   padding:16px;
   height:58px;
+  font-size:16px;
 }
 
 textarea.form-control{
   height:auto;
+  min-height:140px;
 }
 
 .form-label{
@@ -274,6 +280,7 @@ footer{
    RESPONSIVE
 ========================= */
 
+/* Tablet */
 @media(max-width:991px){
 
   .hero{
@@ -286,6 +293,7 @@ footer{
 
 }
 
+/* Mobile */
 @media(max-width:768px){
 
   .hero{
@@ -308,17 +316,28 @@ footer{
     padding:24px;
   }
 
+  .waitlist-box{
+    padding:32px 20px;
+  }
+
 }
 
+/* Small mobile */
 @media(max-width:576px){
+
+  .form-section{
+    padding:60px 0;
+  }
 
   .form-control,
   .form-select{
+    height:52px;
     font-size:16px;
   }
 
 }
 
+/* Extra small */
 @media(max-width:480px){
 
   .hero .d-flex{
@@ -328,6 +347,130 @@ footer{
 
   .hero .btn{
     width:100%;
+  }
+
+}/* =========================
+   REAL MOBILE RESPONSIVENESS FIX
+========================= */
+
+/* prevent horizontal scroll issue */
+body, html {
+  overflow-x: hidden;
+}
+
+/* fix bootstrap row overflow */
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* HERO FIX */
+@media (max-width: 991px) {
+
+  .hero .row {
+    flex-direction: column;
+  }
+
+  .hero .col-lg-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+}
+
+/* VERY IMPORTANT: center and spacing fix */
+@media (max-width: 768px) {
+
+  .hero {
+    text-align: center;
+    padding: 110px 0 60px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .d-flex.gap-3 {
+    justify-content: center !important;
+  }
+
+  .btn-main {
+    width: 100%;
+  }
+
+}
+
+/* WAITLIST FIX (MOST IMPORTANT PART) */
+@media (max-width: 768px) {
+
+  .waitlist-box {
+    padding: 25px 15px;
+    border-radius: 20px;
+  }
+
+  .waitlist-box .row {
+    flex-direction: column;
+  }
+
+  .waitlist-box .col-md-6,
+  .waitlist-box .col-lg-8,
+  .waitlist-box .col-12 {
+    width: 100%;
+  }
+
+  .form-control,
+  .form-select {
+    width: 100%;
+  }
+
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 32px !important;
+  }
+
+  .hero-card {
+    padding: 18px;
+  }
+
+  .pain-box {
+    padding: 20px 15px;
+  }
+
+  .feature-card {
+    padding: 18px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* hero card full safe spacing */
+  .hero-card {
+    padding: 20px;
+  }
+
+  /* force stacked columns */
+  .hero-card .col-6 {
+    width: 100% !important;
+  }
+
+  /* fix header wrap issue */
+  .hero-card .d-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-card .invoice-status {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
   }
 
 }
